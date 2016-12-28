@@ -7,24 +7,13 @@ use Nette\InvalidStateException;
 use Nette\Reflection\ClassType;
 use Nette\Reflection\Method;
 
+/**
+ * @method static \Nette\Application\UI\PresenterComponentReflection getReflection()
+ * @method \Nette\Security\User getUser()
+ * @method string getAction($fullyQualified = FALSE)
+ */
 trait PresenterTrait
 {
-
-    /**
-     * @return \Nette\Security\User
-     */
-    abstract public function getUser();
-
-    /**
-     * @return \Nette\Application\UI\PresenterComponentReflection
-     */
-    abstract public static function getReflection();
-
-    /**
-     * Returns current action name.
-     * @return string
-     */
-    abstract public function getAction($fullyQualified = FALSE);
 
     public function checkRequirements($element)
     {
