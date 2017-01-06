@@ -9,12 +9,21 @@ use Nette\Reflection\Method;
 
 /**
  * @method static \Nette\Application\UI\PresenterComponentReflection getReflection()
- * @method \Nette\Security\User getUser()
- * @method string getAction($fullyQualified = FALSE)
  */
 trait PresenterTrait
 {
+    
+    /**
+     * @return \Nette\Security\User
+     */
+    abstract public function getUser();
 
+    /**
+     * Returns current action name.
+     * @return string
+     */
+    abstract public function getAction($fullyQualified = FALSE);
+    
     public function checkRequirements($element)
     {
         parent::checkRequirements($element);
